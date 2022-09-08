@@ -22,15 +22,14 @@ app
         // This endpoint should call getCityInfo and getJobs and return
         // the result as JSON.
         // The returned JSON object should have two keys:
-        const info = res.json({
+        res.json({
             cityInfo : getCityInfo(req), 
             jobs : getJobs(req)
         })
         // If no city info or jobs are found,
         // the endpoint should return a 404 status
-        if (info === null)
-        return info && res.status(404).end()
-        else return info
+        if (!getCityInfo(req) || !getJobs(req))
+        return res.status(404).end()
     })
 
 module.exports = app
