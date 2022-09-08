@@ -18,7 +18,7 @@ async function getJobs(location) {
     if (data.results.length > 0) return data.results
     else throw new Error('Jobs not found')
   } catch(err) {
-    //console.log(err.data || err.message)
+    console.log(err.data || err.message)
     return false
   }
 }
@@ -35,7 +35,7 @@ async function getCityInfo(location) {
     if (!scores) throw new Error('No scores for this city')
     return scores
   } catch(err) {
-    //console.log(err.data || err.message)
+    console.log(err.data || err.message)
     return false
   }
 }
