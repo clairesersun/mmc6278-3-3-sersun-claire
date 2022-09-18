@@ -23,11 +23,6 @@ app
             // the result as JSON.
             res.json({cityInfo, jobs})
             // If no city info or jobs are found,
-            if ({cityInfo}.isEmpty()) {
-                res.status(404)
-            } else if ({jobs}.isEmpty()) {
-                res.status(404)
-            }
         } catch(err) {
             console.log(err)
             // the endpoint should return a 404 status
